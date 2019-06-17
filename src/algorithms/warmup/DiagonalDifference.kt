@@ -14,14 +14,12 @@ fun diagonalDifference(arr: Array<Array<Int>>): Int {
     var leftDiagonal = 0
     var rightDiagonal = 0
 
-    var width = arr[0].first() - 1
+    var rightDiagonalPosition = arr.size - 1
 
-    val matrix = arr.drop(1)
-
-    matrix.forEach { row ->
-        leftDiagonal += row[0]
-        rightDiagonal += row[width]
-        width -= 1
+    arr.forEachIndexed { leftDiagonalPosition, row ->
+        leftDiagonal += row[leftDiagonalPosition]
+        rightDiagonal += row[rightDiagonalPosition]
+        rightDiagonalPosition -= 1
     }
 
     return (leftDiagonal - rightDiagonal).absoluteValue
