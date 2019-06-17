@@ -3,7 +3,7 @@ package algorithms.warmup
 import java.util.*
 
 // Complete the plusMinus function below.
-fun plusMinus(arr: Array<Int>): Unit {
+fun plusMinus(arr: Array<Int>) {
 
     val (positive, negative, zeros) = arr.fold(Triple(0.0, 0.0, 0.0)) { acc, number ->
         when {
