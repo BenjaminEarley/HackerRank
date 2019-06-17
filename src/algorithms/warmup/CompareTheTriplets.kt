@@ -2,10 +2,10 @@ package algorithms.warmup
 
 // Complete the compareTriplets function below.
 fun compareTriplets(a: Array<Int>, b: Array<Int>): Array<Int> =
-    a.zip(b).fold(arrayOf(0, 0)) { r, (a, b) ->
-        if (a > b) r[0] += 1
-        else if (b > a) r[1] += 1
-        r
+    a.zip(b).fold(arrayOf(0, 0)) { acc, (a, b) ->
+        if (a > b) acc[0] += 1
+        else if (b > a) acc[1] += 1
+        acc
     }
 
 
