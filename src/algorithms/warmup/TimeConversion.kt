@@ -6,20 +6,15 @@ import java.util.*
  * Complete the timeConversion function below.
  */
 fun timeConversion(s: String): String {
+    val time = s.substring(0..s.length - 3)
 
-    val length = s.length
-    val time = s.substring(0..length - 3)
-    val isPm = s.slice(length - 2 until length).let { it == "PM" }
+    val meridianShift = s.slice(s.length - 2 until s.length).let { if (it == "PM") 12 else 0 }
 
-    val (hour, rest) = time.split(':', limit = 2)
+    val (hour, minute, second) = time.split(':')
 
-    val militaryHour = if (isPm) {
-        if (hour == "12") "12" else (hour.toInt() + 12).toString()
-    } else {
-        if (hour == "12") "00" else hour
-    }
+    val militaryHour = (if (hour == "12") meridianShift else hour.toInt() + meridianShift).toString().padStart(2, '0')
 
-    return "$militaryHour:$rest"
+    return "$militaryHour:$minute:$second"
 }
 
 fun main() {
@@ -31,3 +26,4 @@ fun main() {
 
     println(result)
 }
+
