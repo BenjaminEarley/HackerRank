@@ -8,13 +8,14 @@ package algorithms.warmup
  *  1. INTEGER_ARRAY a
  *  2. INTEGER_ARRAY b
  */
-
-fun getTotalX(a: Array<Int>, b: Array<Int>): Int =
-    lcm(a)
-        .let { lcm -> generateSequence(lcm) { it + lcm } }
+fun getTotalX(a: Array<Int>, b: Array<Int>): Int {
+    val lcm = lcm(a)
+    val gcd = gcd(b)
+    return generateSequence(lcm) { it + lcm }
         .takeWhile { it <= b.last() }
-        .filter { factor -> b.all { it % factor == 0 } }
+        .filter { factor -> b.all { gcd % factor == 0 } }
         .count()
+}
 
 
 fun main() {
@@ -33,9 +34,15 @@ fun main() {
     println(total)
 }
 
-fun lcm(input: Array<Int>): Int {
+fun gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 
-    fun gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+fun gcd(input: Array<Int>): Int {
+    var result = input[0]
+    for (i in 1 until input.size) result = gcd(result, input[i])
+    return result
+}
+
+fun lcm(input: Array<Int>): Int {
 
     fun lcm(a: Int, b: Int) = a * (b / gcd(a, b))
 
