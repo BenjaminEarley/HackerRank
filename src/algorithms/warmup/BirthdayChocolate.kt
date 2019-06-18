@@ -2,7 +2,7 @@ package algorithms.warmup
 
 // Complete the birthday function below.
 fun birthday(s: Array<Int>, d: Int, m: Int): Int =
-    (0..s.size - m).filter { s.slice(it until it + m).sum() == d }.count()
+    s.toList().windowed(m).filter { it.sum() == d }.count()
 
 fun main() {
     val n = readLine()!!.trim().toInt()
