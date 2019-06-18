@@ -17,7 +17,6 @@ fun getTotalX(a: Array<Int>, b: Array<Int>): Int {
         .count()
 }
 
-
 fun main() {
     val first_multiple_input = readLine()!!.trimEnd().split(" ")
 
@@ -43,9 +42,7 @@ fun gcd(input: Array<Int>): Int {
 }
 
 fun lcm(input: Array<Int>): Int {
-
     fun lcm(a: Int, b: Int) = a * (b / gcd(a, b))
-
     var result = input[0]
     for (i in 1 until input.size) result = lcm(result, input[i])
     return result
