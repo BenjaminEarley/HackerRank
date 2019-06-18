@@ -13,7 +13,7 @@ fun getTotalX(a: Array<Int>, b: Array<Int>): Int {
     val gcd = gcd(b)
     return generateSequence(lcm) { it + lcm }
         .takeWhile { it <= b.last() }
-        .filter { factor -> b.all { gcd % factor == 0 } }
+        .filter { factor -> gcd % factor == 0 }
         .count()
 }
 
