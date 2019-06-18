@@ -26,7 +26,3 @@ fun main() {
 
 const val YES = "YES"
 const val NO = "NO"
-
-
-// (y * 2) + 0 = (y * 3) + 5
-// (y * 2) + 0 = (y * 3) + 5
