@@ -1,4 +1,4 @@
-package algorithms.warmup
+package algorithms
 
 // Complete the birthday function below.
 fun birthday(s: Array<Int>, d: Int, m: Int): Int =

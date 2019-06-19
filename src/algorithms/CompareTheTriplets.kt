@@ -1,4 +1,4 @@
-package algorithms.warmup
+package algorithms
 
 // Complete the compareTriplets function below.
 fun compareTriplets(a: Array<Int>, b: Array<Int>): Array<Int> =

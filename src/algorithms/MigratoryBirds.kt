@@ -1,4 +1,4 @@
-package algorithms.warmup
+package algorithms
 
 // Complete the migratoryBirds function below.
 fun migratoryBirds(arr: Array<Int>): Int =

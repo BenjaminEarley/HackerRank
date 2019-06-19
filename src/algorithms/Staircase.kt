@@ -1,7 +1,6 @@
-package algorithms.warmup
+package algorithms
 
 import java.util.*
-import kotlin.text.*
 
 // Complete the staircase function below.
 fun staircase(n: Int) = (1..n).forEach { print("${" ".repeat(n - it)}${"#".repeat(it)}\n") }
